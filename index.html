@@ -199,6 +199,37 @@
             margin-bottom: 15px;
             color: #0a4a8e;
         }
+
+        /* Gallery */
+        .gallery {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
         
         /* About */
         .about {
@@ -575,6 +606,34 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+<section class="gallery" id="gallery">
+    <div class="container">
+        <div class="section-title">
+            <h2>Galeri Pekerjaan</h2>
+            <p>Dokumentasi beberapa pekerjaan pengeboran sumur dan instalasi kami</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/foto (1).jpg" alt="Proses pengeboran sumur">
+            </div>
+            <div class="gallery-item">
+                <img src="images/foto (2).jpg" alt="Pemasangan pompa air">
+            </div>
+            <div class="gallery-item">
+                <img src="images/foto (3).jpg" alt="Sumur resapan selesai dibuat">
+            </div>
+            <div class="gallery-item">
+                <img src="images/foto (4).jpg" alt="Filterisasi air">
+            </div>
+            <div class="gallery-item">
+                <img src="images/foto (5).jpg" alt="Peralatan pengeboran">
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -651,3 +710,4 @@
 </body>
 
 </html>
+
