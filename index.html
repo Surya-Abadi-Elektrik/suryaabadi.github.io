@@ -17,6 +17,7 @@
             background-color: #f5f9fc;
             color: #333;
             line-height: 1.6;
+            padding-top: 120px; /* Memberi ruang untuk header yang fixed */
         }
         
         .container {
@@ -25,14 +26,16 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Header - Diubah menjadi fixed */
         header {
             background: linear-gradient(135deg, #0a4a8e 0%, #1a75bc 100%);
             color: white;
-            padding: 20px 0;
-            position: sticky;
+            padding: 15px 0;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
         }
         
@@ -49,24 +52,24 @@
         }
         
         .logo i {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #ffcc00;
         }
         
         .logo-text h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             line-height: 1.2;
         }
         
         .logo-text p {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             opacity: 0.9;
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
         }
         
         nav a {
@@ -74,11 +77,82 @@
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
         
         nav a:hover {
             color: #ffcc00;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Maps Section - Dipindah ke bawah header */
+        .maps-section {
+            padding: 30px 0;
+            background: #e9f2fc;
+            margin-top: -60px; /* Kompensasi padding body */
+        }
+        
+        .maps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .maps-address {
+            text-align: center;
+        }
+        
+        .maps-address h3 {
+            color: #0a4a8e;
+            margin-bottom: -5px;
+            font-size: 1.5rem;
+        }
+        
+        .maps-address p {
+            font-size: 1rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        
+        .maps-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .map-embed {
+            width: 100%;
+            max-width: 600px;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .map-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #0a4a8e;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .map-link:hover {
+            background: #1a75bc;
         }
         
         /* Hero Section */
@@ -104,32 +178,33 @@
         .hero-content {
             position: relative;
             max-width: 600px;
-            padding: 30px;
+            padding: 25px;
             background: rgba(10, 74, 142, 0.8);
-            border-radius: 10px;
-            margin-left: 50px;
+            border-radius: 8px;
+            margin: 0 auto;
+            text-align: center;
         }
         
         .hero-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
         
         .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
         
         .btn {
             display: inline-block;
             background: #ffcc00;
             color: #0a4a8e;
-            padding: 12px 25px;
+            padding: 10px 22px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             font-weight: bold;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             transition: background 0.3s, transform 0.3s;
         }
@@ -141,23 +216,23 @@
         
         /* Services */
         .services {
-            padding: 80px 0;
+            padding: 70px 0;
             background: white;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             color: #0a4a8e;
         }
         
         .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 12px;
         }
         
         .section-title p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto;
             color: #666;
@@ -165,25 +240,25 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
         
         .service-card {
             background: #f8f8f8;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
         
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
         }
         
         .service-image {
-            height: 200px;
+            height: 180px;
             overflow: hidden;
             position: relative;
         }
@@ -201,40 +276,40 @@
         
         .service-icon {
             position: absolute;
-            bottom: -25px;
-            right: 20px;
+            bottom: -20px;
+            right: 15px;
             background: #0a4a8e;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 0 极px 10px rgba(0, 0, 0, 0.2);
+            font-size: 1.5rem;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
         }
         
         .service-content {
-            padding: 35px 25px 25px;
+            padding: 30px 20px 20px;
         }
         
         .service-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
             color: #0a4a8e;
         }
         
         /* About */
         .about {
-            padding: 80px 0;
+            padding: 70px 0;
             background: #f0f7ff;
         }
         
         .about-content {
             display: flex;
             align-items: center;
-            gap: 50px;
+            gap: 40px;
         }
         
         .about-text {
@@ -242,21 +317,21 @@
         }
         
         .about-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            font-size: 2rem;
+            margin-bottom: 18px;
             color: #0a4a8e;
         }
         
         .about-text p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            margin-bottom: 12px;
+            font-size: 1rem;
         }
         
         .about-image {
             flex: 1;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
         
         .about-image img {
@@ -265,65 +340,134 @@
             display: block;
         }
         
+        /* Gallery */
+        .gallery {
+            padding: 70px 0;
+            background: #f9f9f9;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.04);
+        }
+        
         /* Contact */
         .contact {
-            padding: 80px 0;
+            padding: 70px 0;
             background: white;
         }
         
         .contact-info {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
         }
         
         .contact-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            margin-bottom: 18px;
             color: #0a4a8e;
         }
         
         .contact-info p {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        /* Social Media Links - Diperkecil */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 18px 0;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #0a4a8e;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: #1a75bc;
+            transform: translateY(-3px);
+        }
+        
+        .social-links .instagram:hover {
+            background: #E1306C;
+        }
+        
+        .social-links .youtube:hover {
+            background: #FF0000;
+        }
+        
+        .social-links .maps:hover {
+            background: #34A853;
         }
         
         .whatsapp-btn {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             background: #25D366;
             color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
+            padding: 12px 25px;
+            border-radius: 40px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            margin-top: 18px;
             transition: background 0.3s, transform 0.3s;
         }
         
         .whatsapp-btn:hover {
             background: #128C7E;
-            transform: scale(1.05);
+            transform: scale(1.04);
         }
         
         /* Footer */
         footer {
             background: #0a4a8e;
             color: white;
-            padding: 40px 0 20px;
+            padding: 35px 0 15px;
             text-align: center;
         }
         
         .footer-content {
             display: flex;
             flex-direction: column;
-            gap: 30px;
-            margin-bottom: 30px;
+            gap: 25px;
+            margin-bottom: 25px;
         }
         
         .footer-logo {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #ffcc00;
         }
@@ -331,7 +475,7 @@
         .footer-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
         }
         
@@ -339,6 +483,7 @@
             color: white;
             text-decoration: none;
             transition: color 0.3s;
+            font-size: 0.9rem;
         }
         
         .footer-links a:hover {
@@ -346,16 +491,16 @@
         }
         
         .copyright {
-            padding-top: 20px;
+            padding-top: 18px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
-        /* WhatsApp Popup - Bagian yang Diperbaiki */
+        /* WhatsApp Popup */
         .whatsapp-popup {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 25px;
+            right: 25px;
             z-index: 1000;
         }
         
@@ -363,13 +508,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: #25D366;
             color: white;
             border-radius: 50%;
-            font-size: 2rem;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            font-size: 1.7rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
             cursor: pointer;
             transition: transform 0.3s, background 0.3s;
             animation: pulse 1.5s infinite;
@@ -382,10 +527,10 @@
         
         @keyframes pulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
             }
             70% {
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+                box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
             }
             100% {
                 box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
@@ -394,18 +539,18 @@
         
         .popup-content {
             position: absolute;
-            bottom: 85px;
+            bottom: 70px;
             right: 0;
-            width: 300px;
+            width: 260px;
             background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s, visibility 0.3s;
-            transform: translateX(50%); /* Ditambahkan untuk perataan tengah */
-            right: 200%; /* Ditambahkan untuk perataan tengah */
+            transform: translateX(50%);
+            right: 200%;
         }
         
         .popup-content.show {
@@ -415,13 +560,15 @@
         
         .popup-content h3 {
             color: #0a4a8e;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-align: center;
+            font-size: 1.2rem;
         }
         
         .popup-content p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             text-align: center;
+            font-size: 0.9rem;
         }
         
         .popup-content a {
@@ -429,12 +576,13 @@
             text-align: center;
             background: #25D366;
             color: white;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 8px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 8px;
             transition: background 0.3s;
+            font-size: 0.9rem;
         }
         
         .popup-content a:hover {
@@ -443,9 +591,9 @@
         
         .close-popup {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
+            top: 8px;
+            right: 12px;
+            font-size: 1.3rem;
             cursor: pointer;
             color: #999;
             transition: color 0.3s;
@@ -457,39 +605,60 @@
         
         /* Responsive Styles */
         @media (max-width: 768px) {
+            body {
+                padding-top: 110px;
+            }
+            
             .header-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 15px;
+                gap: 12px;
             }
             
             .logo {
                 justify-content: center;
             }
             
-            /* Menu navigasi tetap horizontal */
+            .logo i {
+                font-size: 2rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
             nav ul {
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: center;
-                gap: 12px;
+                gap: 10px;
             }
             
             nav a {
-                font-size: 0.9rem;
-                padding: 5px 10px;
-                background: rgba(255, 255, 255, 0.1);
-                border-radius: 5px;
+                font-size: 0.85rem;
+                padding: 4px 8px;
+            }
+            
+            .maps-section {
+                padding: 25px 0;
+                margin-top: -5px;
+            }
+            
+            .maps-address h3 {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                height: 450px;
             }
             
             .hero-content {
-                margin: 0 auto;
-                text-align: center;
+                padding: 20px;
                 max-width: 90%;
             }
             
             .hero-content h2 {
-                font-size: 2rem;
+                font-size: 1.9rem;
             }
             
             .hero-content p {
@@ -505,69 +674,23 @@
             }
             
             .section-title h2 {
-                font-size: 2rem;
+                font-size: 1.9rem;
             }
             
-            /* Perbaikan untuk WhatsApp popup di mobile */
+            .map-embed {
+                height: 200px;
+            }
+            
             .whatsapp-popup {
                 bottom: 20px;
                 right: 20px;
             }
             
             .popup-content {
-                width: 280px;
+                width: 240px;
                 right: 200%;
-                bottom: 70px;
+                bottom: 60px;
                 transform: translateX(50%);
-            }
-            
-            .popup-content h3 {
-                font-size: 1.2rem;
-            }
-            
-            .popup-content p {
-                font-size: 0.9rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            nav ul {
-                gap: 8px;
-            }
-            
-            nav a {
-                font-size: 0.8rem;
-                padding: 4px 8px;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.5rem;
-            }
-            
-            .hero {
-                height: 400px;
-            }
-            
-            .hero-content {
-                padding: 20px;
-            }
-            
-            .hero-content h2 {
-                font-size: 1.8rem;
-            }
-            
-            /* Perbaikan untuk layar sangat kecil */
-            .whatsapp-popup {
-                bottom: 15px;
-                right: 15px;
-            }
-            
-            .popup-content {
-                width: 250px;
-                right: 50%;
-                bottom: 65px;
-                transform: translateX(50%);
-                padding: 15px;
             }
             
             .popup-content h3 {
@@ -577,47 +700,84 @@
             .popup-content p {
                 font-size: 0.85rem;
             }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding-top: 100px;
+            }
+            
+            nav ul {
+                gap: 6px;
+            }
+            
+            nav a {
+                font-size: 0.8rem;
+                padding: 3px 6px;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            .maps-section {
+                margin-top: 10px;
+            }
+            
+            .hero {
+                height: 400px;
+            }
+            
+            .hero-content {
+                padding: 15px;
+            }
+            
+            .hero-content h2 {
+                font-size: 1.7rem;
+            }
+            
+            .whatsapp-popup {
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .whatsapp-button {
+                width: 55px;
+                height: 55px;
+                font-size: 1.5rem;
+            }
+            
+            .popup-content {
+                width: 220px;
+                right: 50%;
+                bottom: 55px;
+                transform: translateX(50%);
+                padding: 15px;
+            }
+            
+            .popup-content h3 {
+                font-size: 1rem;
+            }
+            
+            .popup-content p {
+                font-size: 0.8rem;
+            }
             
             .popup-content a {
-                font-size: 0.9rem;
-                padding: 8px;
+                font-size: 0.85rem;
+                padding: 7px;
+            }
+            
+            .social-links a {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
             }
         }
-
-        /* Gallery */
-        .gallery {
-            padding: 80px 0;
-            background: #f9f9f9;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .gallery-item {
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header - Fixed (Tidak ikut scroll) -->
     <header>
         <div class="container header-content">
             <div class="logo">
@@ -632,11 +792,30 @@
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#services">Layanan</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#gallery">Galeri</a></li>
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <!-- Maps Section - Ikut scroll -->
+    <section class="maps-section" id="maps">
+        <div class="container maps-container">
+            <div class="maps-address">
+                <h3>Lokasi Kami</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl Bangetayu Wetan Regency E 37, RT.11/RW.01, Kec. Genuk, Kota Semarang, Jawa Tengah 50115</p>
+                <a href="https://maps.app.goo.gl/a8EbBdJnT8Jh7yvy9?g_st=aw" class="map-link" target="_blank">
+                    <i class="fas fa-map"></i> Buka di Google Maps
+                </a>
+            </div>
+            <div class="maps-wrapper">
+                <div class="map-embed">>
+                    <iframe src="https://maps.google.com/maps?q=-6.983412443928951, 110.48223731147671&z=17&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -681,7 +860,7 @@
                 </div>
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1612489846076-ef8f35d63139?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfH极8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Sumur Resapan">
+                        <img src="https://images/Sumur_resapan.jpg" alt="Sumur Resapan">
                         <div class="service-icon">
                             <i class="fas fa-recycle"></i>
                         </div>
@@ -743,7 +922,7 @@
                     <h2>Surya Abadi Elektrik</h2>
                     <p>Kami adalah perusahaan jasa pengeboran sumur yang telah beroperasi sejak tahun 2010. Dengan pengalaman lebih dari 13 tahun, kami telah melayani ratusan pelanggan di seluruh Indonesia.</p>
                     <p>Tim kami terdiri dari tenaga ahli yang berpengalaman dalam menangani berbagai jenis pengeboran sumur, dari sumur dangkal untuk kebutuhan rumah tangga hingga sumur dalam untuk industri.</p>
-                    <p>Kami menggunakan peralatan modern dan teknologi terbaru untuk memastikan hasil kerja yang maksimal dan memuaskan pelanggan.</极>
+                    <p>Kami menggunakan peralatan modern dan teknologi terbaru untuk memastikan hasil kerja yang maksimal dan memuaskan pelanggan.</p>
                     <p>Komitmen kami adalah menyediakan solusi air bersih yang berkualitas dengan layanan profesional dan harga yang kompetitif.</p>
                 </div>
                 <div class="about-image">
@@ -756,7 +935,7 @@
     <!-- Gallery Section -->
     <section class="gallery" id="gallery">
         <div class="container">
-            <div class="section-title">
+            <div class极section-title">
                 <h2>Galeri Pekerjaan</h2>
                 <p>Dokumentasi beberapa pekerjaan pengeboran sumur dan instalasi kami</p>
             </div>
@@ -786,7 +965,6 @@
         </div>
     </section>
 
-
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
@@ -799,6 +977,20 @@
                 <p><i class="fas fa-phone"></i> Telepon: 085100044750</p>
                 <p><i class="fas fa-map-marker-alt"></i> Melayani Seluruh Jawa</p>
                 <p><i class="fas fa-clock"></i> Buka: Senin - Minggu, 08:00 - 17:00 WIB</p>
+                
+                <!-- Social Media Links - Diperkecil -->
+                <div class="social-links">
+                    <a href="https://www.instagram.com/suryaabadielektrik?igsh=MWZlZ2hsNWV1Zm5qMQ==" class="instagram" target="_blank" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" class="youtube" target="_blank" title="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://maps.app.goo.gl/a8EbBdJnT8Jh7yvy9?g_st=aw" class="maps" target="_blank" title="Google Maps">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </a>
+                </div>
+                
                 <a href="https://wa.me/6285100044750?text=Halo,%20saya%20ingin%20konsultasi%20tentang%20jasa%20pengeboran%20sumur" class="whatsapp-btn" target="_blank">
                     <i class="fab fa-whatsapp"></i> Hubungi via WhatsApp
                 </a>
@@ -815,6 +1007,7 @@
                     <a href="#home">Beranda</a>
                     <a href="#services">Layanan</a>
                     <a href="#about">Tentang Kami</a>
+                    <a href="#gallery">Galeri</a>
                     <a href="#contact">Kontak</a>
                 </div>
             </div>
@@ -824,7 +1017,7 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Popup - Diperbaiki untuk mobile -->
+    <!-- WhatsApp Popup -->
     <div class="whatsapp-popup">
         <div class="whatsapp-button" id="whatsappButton">
             <i class="fab fa-whatsapp"></i>
@@ -862,6 +1055,3 @@
     </script>
 </body>
 </html>
-
-
-
