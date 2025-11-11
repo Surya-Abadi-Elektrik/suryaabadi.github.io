@@ -844,84 +844,34 @@
                 });
             }
 
-            // Variabel untuk touch handling
-            let startX = 0;
-            let currentX = 0;
-            let isDragging = false;
-            const sliderContainer = document.querySelector('.slider-container');
+            // Simple swipe detection tanpa mengganggu scroll
+            let touchStartX = 0;
+            let touchEndX = 0;
             
-            // Touch events untuk mobile
-            sliderContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
-            sliderContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
-            sliderContainer.addEventListener('touchend', handleTouchEnd);
+            sliderContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
             
-            function handleTouchStart(e) {
-                startX = e.touches[0].clientX;
-                currentX = startX;
-                isDragging = true;
-                e.preventDefault();
-            }
+            sliderContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                checkSwipe();
+            }, { passive: true });
             
-            function handleTouchMove(e) {
-                if (!isDragging) return;
-                currentX = e.touches[0].clientX;
-                e.preventDefault();
-            }
-            
-            function handleTouchEnd(e) {
-                if (!isDragging) return;
+            function checkSwipe() {
+                const swipeThreshold = 50;
                 
-                const diffX = startX - currentX;
-                const minSwipeDistance = 50; // Minimal jarak swipe
-                
-                if (Math.abs(diffX) > minSwipeDistance) {
-                    if (diffX > 0) {
-                        // Swipe kiri -> next slide
-                        changeSlide(1);
-                    } else {
-                        // Swipe kanan -> previous slide
-                        changeSlide(-1);
-                    }
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe kiri - next
+                    changeSlide(1);
                 }
-                
-                isDragging = false;
-                e.preventDefault();
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe kanan - previous
+                    changeSlide(-1);
+                }
             }
         });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
