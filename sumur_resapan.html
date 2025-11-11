@@ -93,7 +93,7 @@
         .service-hero {
             background: linear-gradient(135deg, #0a4a8e 0%, #1a75bc 100%);
             color: white;
-            padding: 40px 0;
+            padding: 20px 0;
             text-align: center;
         }
         
@@ -117,6 +117,7 @@
             height: 100%;
             /* Atau gunakan 16:9: aspect-ratio: 16 / 9; */
             aspect-ratio: 3 / 4; 
+            touch-action: pan-y;
         }
         
         .slider {
@@ -140,6 +141,11 @@
             object-fit: cover; /* Tetap cover */
             object-position: center; /* Pastikan fokus di tengah */
             display: block;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
         }
         
         .slider-nav {
@@ -473,6 +479,96 @@
                 max-width: 300px;
                 margin: 5px auto;
             }
+            
+            .slide img {
+                aspect-ratio: 3 / 4; 
+                object-fit: cover; /* Tetap cover */
+                object-position: center; /* Pastikan fokus di tengah */
+                display: block;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding-top: 110px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 7px;
+            }
+            
+            nav a {
+                font-size: 0.7rem;
+                padding: 4px 5px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+            
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .logo-image {
+                width: 50px;        /* Ukuran fixed */
+                height: 50px;       /* Ukuran fixed */
+                object-fit: contain; /* Biar tidak terdistorsi */
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+
+            .logo-text p {
+                font-size: 0.6rem;
+            }
+
+            .service-hero {
+                background: linear-gradient(135deg, #0a4a8e 0%, #1a75bc 100%);
+                color: white;
+                padding: 40px 0;
+                text-align: center;
+            }
+            
+            .service-hero-content h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 5px auto;
+            }
+            
+            .slide img {
+                aspect-ratio: 3 / 4; 
+                object-fit: cover; /* Tetap cover */
+                object-position: center; /* Pastikan fokus di tengah */
+                display: block;
+            }
         }
     </style>
 </head>
@@ -653,6 +749,8 @@
             const dots = document.querySelectorAll('.slider-dot');
             const slides = document.querySelectorAll('.slide');
             
+            if (slides.length === 0) return;
+            
             // Hitung slide baru dengan modulo untuk loop
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
             
@@ -665,10 +763,50 @@
             });
         }
         
+        // Fungsi untuk inisialisasi swipe
+        function initSwipe() {
+            const sliderContainer = document.querySelector('.slider-container');
+            
+            if (!sliderContainer) {
+                console.log('Slider container not found, retrying...');
+                setTimeout(initSwipe, 100);
+                return;
+            }
+            
+            let touchStartX = 0;
+            let touchEndX = 0;
+        
+            sliderContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+        
+            sliderContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                checkSwipe();
+            }, { passive: true });
+        
+            function checkSwipe() {
+                const swipeThreshold = 50;
+                const diffX = touchEndX - touchStartX;
+                
+                if (Math.abs(diffX) > swipeThreshold) {
+                    if (diffX < 0) {
+                        // Swipe kiri - next
+                        changeSlide(1);
+                    } else {
+                        // Swipe kanan - previous
+                        changeSlide(-1);
+                    }
+                }
+            }
+            
+            console.log('Swipe functionality initialized');
+        }
+        
         // Load service data based on URL parameter
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
-            const serviceId = urlParams.get('service') || 'sumur-resapan';
+            const serviceId = urlParams.get('service') || 'sumur-dangkal';
             const service = servicesData[serviceId];
             
             if (service) {
@@ -747,6 +885,11 @@
                     li.textContent = benefit;
                     benefitsList.appendChild(li);
                 });
+                
+                // Inisialisasi swipe functionality setelah slider selesai dibuat
+                setTimeout(() => {
+                    initSwipe();
+                }, 100);
             }
         });
     </script>
