@@ -734,20 +734,44 @@
             }
             
             nav ul {
-                gap: 6px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
             }
             
             nav a {
-                font-size: 0.8rem;
-                padding: 3px 6px;
+                font-size: 0.85rem;
+                padding: 4px 8px;
+            }
+            
+            .logo {
+                justify-content: center;
+            }
+            
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .logo-image {
+                width: 50px;        /* Ukuran fixed */
+                height: 50px;       /* Ukuran fixed */
+                object-fit: contain; /* Biar tidak terdistorsi */
             }
             
             .logo-text h1 {
-                font-size: 1.3rem;
+                font-size: 1.4rem;
             }
             
             .maps-section {
-                margin-top: 10px;
+                padding: 25px 0;
+                margin-top: -5px;
+            }
+            
+            .maps-address h3 {
+                font-size: 1.3rem;
             }
             
             .hero {
@@ -1195,6 +1219,7 @@
     </script>
 </body>
 </html>
+
 
 
 
