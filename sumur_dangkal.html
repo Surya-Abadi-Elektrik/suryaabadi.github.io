@@ -752,6 +752,8 @@
             const dots = document.querySelectorAll('.slider-dot');
             const slides = document.querySelectorAll('.slide');
             
+            if (slides.length === 0) return;
+            
             // Hitung slide baru dengan modulo untuk loop
             currentSlide = (currentSlide + direction + slides.length) % slides.length;
             
@@ -762,6 +764,46 @@
             dots.forEach((dot, index) => {
                 dot.classList.toggle('active', index === currentSlide);
             });
+        }
+        
+        // Fungsi untuk inisialisasi swipe
+        function initSwipe() {
+            const sliderContainer = document.querySelector('.slider-container');
+            
+            if (!sliderContainer) {
+                console.log('Slider container not found, retrying...');
+                setTimeout(initSwipe, 100);
+                return;
+            }
+            
+            let touchStartX = 0;
+            let touchEndX = 0;
+        
+            sliderContainer.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+        
+            sliderContainer.addEventListener('touchend', e => {
+                touchEndX = e.changedTouches[0].screenX;
+                checkSwipe();
+            }, { passive: true });
+        
+            function checkSwipe() {
+                const swipeThreshold = 50;
+                const diffX = touchEndX - touchStartX;
+                
+                if (Math.abs(diffX) > swipeThreshold) {
+                    if (diffX < 0) {
+                        // Swipe kiri - next
+                        changeSlide(1);
+                    } else {
+                        // Swipe kanan - previous
+                        changeSlide(-1);
+                    }
+                }
+            }
+            
+            console.log('Swipe functionality initialized');
         }
         
         // Load service data based on URL parameter
@@ -846,37 +888,17 @@
                     li.textContent = benefit;
                     benefitsList.appendChild(li);
                 });
-            }
-
-            // Simple swipe detection tanpa mengganggu scroll
-            let touchStartX = 0;
-            let touchEndX = 0;
-            
-            sliderContainer.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-            
-            sliderContainer.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                checkSwipe();
-            }, { passive: true });
-            
-            function checkSwipe() {
-                const swipeThreshold = 50;
                 
-                if (touchEndX < touchStartX - swipeThreshold) {
-                    // Swipe kiri - next
-                    changeSlide(1);
-                }
-                if (touchEndX > touchStartX + swipeThreshold) {
-                    // Swipe kanan - previous
-                    changeSlide(-1);
-                }
+                // Inisialisasi swipe functionality setelah slider selesai dibuat
+                setTimeout(() => {
+                    initSwipe();
+                }, 100);
             }
         });
     </script>
 </body>
 </html>
+
 
 
 
