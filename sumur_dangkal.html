@@ -52,9 +52,10 @@
             gap: 15px;
         }
         
-        .logo i {
-            font-size: 2.2rem;
-            color: #ffcc00;
+        .logo-image {
+            width: 50px;        /* Ukuran fixed */
+            height: 50px;       /* Ukuran fixed */
+            object-fit: contain; /* Biar tidak terdistorsi */
         }
         
         .logo-text h1 {
@@ -352,6 +353,26 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            .logo {
+                justify-content: center;
+            }
+            
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .logo-image {
+                width: 50px;        /* Ukuran fixed */
+                height: 50px;       /* Ukuran fixed */
+                object-fit: contain; /* Biar tidak terdistorsi */
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
             
             .service-hero-content h1 {
                 font-size: 2rem;
@@ -583,3 +604,4 @@
     </script>
 </body>
 </html>
+
