@@ -114,8 +114,12 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            height: 500px; /* Ganti aspect-ratio dengan fixed height */
+            /* Hapus: height: 500px; */
             width: 100%;
+            
+            /* Tambahkan ini untuk memaksa rasio 4:3 (contoh) pada desktop: */
+            /* Atau gunakan 16:9: aspect-ratio: 16 / 9; */
+            aspect-ratio: 4 / 3; /* Pastikan gambar akan mengisi tinggi/lebar dalam rasio 4:3 */
         }
         
         .slider {
@@ -756,6 +760,7 @@
     </script>
 </body>
 </html>
+
 
 
 
