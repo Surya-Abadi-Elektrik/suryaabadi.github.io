@@ -702,8 +702,8 @@
                 images: [
                     'images/Filter_air.jpg',
                     'images/Filter_air (2).jpeg',
-                    'images/Filter_air (3).jpg',
-                    'images/Filter_air (4).jpg'
+                    'images/Filter_air (3).jpeg',
+                    'images/Filter_air (4).jpeg'
                 ],
                 features: [
                     'Mengatasi masalah air bau, keruh, dan kuning',
