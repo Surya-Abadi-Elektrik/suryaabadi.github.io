@@ -301,6 +301,22 @@
             margin-bottom: 12px;
             color: #0a4a8e;
         }
+
+        .service-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.3s;
+        }
+        
+        .service-card-link:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card-link:hover .service-card {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
         
         /* About */
         .about {
@@ -844,30 +860,34 @@
                 <p>Kami menyediakan berbagai layanan profesional untuk memenuhi kebutuhan air bersih dan Perlindungan rumah Anda</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/Sumur_dangkal.jpg" alt="Sumur Dangkal">
-                        <div class="service-icon">
-                            <i class="fas fa-pump"></i>
+                <a href="sumur-dangkal.html?service=sumur-dangkal" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="images/Sumur_dangkal.jpg" alt="Sumur Dangkal">
+                            <div class="service-icon">
+                                <i class="fas fa-pump"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Sumur Dangkal</h3>
+                            <p>Pengeboran sumur dangkal untuk kebutuhan air rumah tangga dengan kedalaman hingga 30 meter.</p>
                         </div>
                     </div>
-                    <div class="service-content">
-                        <h3>Sumur Dangkal</h3>
-                        <p>Pengeboran sumur dangkal untuk kebutuhan air rumah tangga dengan kedalaman hingga 30 meter.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="images/Sumur_dalam.jpg" alt="Sumur Dalam">
-                        <div class="service-icon">
-                            <i class="fas fa-industry"></i>
+                </a>
+                <a href="sumur-dalam.html?service=sumur-dalam" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="images/Sumur_dalam.jpg" alt="Sumur Dalam">
+                            <div class="service-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                        </div>
+                        <div class="service-content">
+                            <h3>Sumur Dalam</h3>
+                            <p>Pengeboran sumur dalam untuk industri, hotel, dan kebutuhan volume air besar dengan kedalaman hingga 200 meter.</p>
                         </div>
                     </div>
-                    <div class="service-content">
-                        <h3>Sumur Dalam</h3>
-                        <p>Pengeboran sumur dalam untuk industri, hotel, dan kebutuhan volume air besar dengan kedalaman hingga 200 meter.</p>
-                    </div>
-                </div>
+                </a>
                 <div class="service-card">
                     <div class="service-image">
                         <img src="images/Sumur_resapan.jpg" alt="Sumur Resapan">
@@ -1173,6 +1193,7 @@
     </script>
 </body>
 </html>
+
 
 
 
