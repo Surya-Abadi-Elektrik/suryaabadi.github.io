@@ -776,32 +776,61 @@
             
             let touchStartX = 0;
             let touchEndX = 0;
+            let isSwiping = false; // Flag untuk melacak apakah ini adalah gerakan swipe
         
+            // 1. touchstart - Catat posisi awal
             sliderContainer.addEventListener('touchstart', e => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
+                // Hanya peduli pada sentuhan pertama
+                touchStartX = e.touches[0].screenX;
+                touchEndX = e.touches[0].screenX;
+                isSwiping = false; // Reset flag swipe
+            }, { passive: true }); // Boleh passive karena tidak memblokir di sini
         
-            sliderContainer.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                checkSwipe();
-            }, { passive: true });
-        
-            function checkSwipe() {
-                const swipeThreshold = 50;
+            // 2. touchmove - Lacak pergerakan dan cegah scroll default
+            sliderContainer.addEventListener('touchmove', e => {
+                // Catat posisi pergerakan
+                touchEndX = e.touches[0].screenX;
                 const diffX = touchEndX - touchStartX;
+                
+                // Dapatkan posisi Y untuk membandingkan arah
+                const diffY = Math.abs(e.touches[0].screenY - e.changedTouches[0].screenY);
+                
+                // Tentukan apakah gerakan lebih horizontal daripada vertikal
+                const swipeThreshold = 10;
+                if (Math.abs(diffX) > swipeThreshold && Math.abs(diffX) > diffY) {
+                    // Ini adalah swipe horizontal, blokir scroll vertikal default browser
+                    e.preventDefault(); 
+                    isSwiping = true;
+                } else if (isSwiping) {
+                    // Jika sudah dianggap swiping, terus blokir
+                     e.preventDefault();
+                }
+                
+            }, { passive: false }); // HARUS passive: false untuk mengizinkan e.preventDefault()
+        
+            // 3. touchend - Cek dan eksekusi slide change
+            sliderContainer.addEventListener('touchend', e => {
+                if (!isSwiping) return; // Abaikan jika hanya tap (bukan swipe)
+        
+                // Gunakan posisi terakhir yang dicatat oleh touchmove
+                const finalTouchEndX = e.changedTouches[0].screenX;
+                const diffX = finalTouchEndX - touchStartX;
+                const swipeThreshold = 50;
                 
                 if (Math.abs(diffX) > swipeThreshold) {
                     if (diffX < 0) {
-                        // Swipe kiri - next
+                        // Swipe kiri (gerak ke kiri) - next
                         changeSlide(1);
                     } else {
-                        // Swipe kanan - previous
+                        // Swipe kanan (gerak ke kanan) - previous
                         changeSlide(-1);
                     }
                 }
-            }
-            
-            console.log('Swipe functionality initialized');
+                isSwiping = false; // Selesai swipe
+                
+            }, { passive: true }); // Boleh passive lagi
+        
+            console.log('Swipe functionality initialized with touchmove prevention');
         }
         
         // Load service data based on URL parameter
