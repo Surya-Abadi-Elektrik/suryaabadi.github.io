@@ -133,16 +133,14 @@
             flex-shrink: 0;
             flex-grow: 0;
             position: relative;
-            display: flex;           /* Tambahkan ini */
-            align-items: center;     /* Tambahkan ini */
-            justify-content: center; /* Tambahkan ini */
-            background: #f8f9fa;    /* Tambahkan background */
+            /* Hapus display: flex, align-items, justify-content */
         }
         
         .slide img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover; /* Tetap cover */
+            object-position: center; /* Pastikan fokus di tengah */
             display: block;
         }
         
@@ -759,6 +757,7 @@
     </script>
 </body>
 </html>
+
 
 
 
