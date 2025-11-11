@@ -650,14 +650,10 @@
             const dots = document.querySelectorAll('.slider-dot');
             const slides = document.querySelectorAll('.slide');
             
-            currentSlide += direction;
+            // Hitung slide baru dengan modulo untuk loop
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
             
-            if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
-            } else if (currentSlide >= slides.length) {
-                currentSlide = 0;
-            }
-            
+            // Pindahkan slider
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
             
             // Update dots
@@ -690,6 +686,10 @@
                 const slider = document.getElementById('service-slider');
                 const sliderDots = document.getElementById('slider-dots');
                 
+                // Clear existing content
+                slider.innerHTML = '';
+                sliderDots.innerHTML = '';
+                
                 service.images.forEach((image, index) => {
                     // Create slide
                     const slide = document.createElement('div');
@@ -713,8 +713,13 @@
                     sliderDots.appendChild(dot);
                 });
                 
+                // Reset slider position
+                currentSlide = 0;
+                slider.style.transform = `translateX(0)`;
+                
                 // Populate features
                 const featuresList = document.getElementById('service-features');
+                featuresList.innerHTML = ''; // Clear existing
                 service.features.forEach(feature => {
                     const li = document.createElement('li');
                     li.textContent = feature;
@@ -723,6 +728,7 @@
                 
                 // Populate process
                 const processContainer = document.getElementById('service-process');
+                processContainer.innerHTML = ''; // Clear existing
                 service.process.forEach(step => {
                     const div = document.createElement('div');
                     div.className = 'process-step';
@@ -732,6 +738,7 @@
                 
                 // Populate benefits
                 const benefitsList = document.getElementById('service-benefits');
+                benefitsList.innerHTML = ''; // Clear existing
                 service.benefits.forEach(benefit => {
                     const li = document.createElement('li');
                     li.textContent = benefit;
@@ -742,6 +749,7 @@
     </script>
 </body>
 </html>
+
 
 
 
