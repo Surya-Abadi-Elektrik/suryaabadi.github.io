@@ -117,6 +117,7 @@
             height: 100%;
             /* Atau gunakan 16:9: aspect-ratio: 16 / 9; */
             aspect-ratio: 3 / 4; 
+            touch-action: pan-y;
         }
         
         .slider {
@@ -140,6 +141,11 @@
             object-fit: cover; /* Tetap cover */
             object-position: center; /* Pastikan fokus di tengah */
             display: block;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+            -moz-user-drag: none;
+            -o-user-drag: none;
+            user-drag: none;
         }
         
         .slider-nav {
@@ -538,6 +544,7 @@
             
             .service-hero-content h1 {
                 font-size: 2rem;
+                margin-bottom: 20px;
             }
             
             .cta-buttons {
@@ -884,6 +891,7 @@
     </script>
 </body>
 </html>
+
 
 
 
