@@ -525,6 +525,13 @@
             .logo-text h1 {
                 font-size: 1.4rem;
             }
+
+            .service-hero {
+                background: linear-gradient(135deg, #0a4a8e 0%, #1a75bc 100%);
+                color: white;
+                padding: 40px 0;
+                text-align: center;
+            }
             
             .service-hero-content h1 {
                 font-size: 2rem;
@@ -826,10 +833,55 @@
                     benefitsList.appendChild(li);
                 });
             }
+
+            // Variabel untuk touch handling
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+            const sliderContainer = document.querySelector('.slider-container');
+            
+            // Touch events untuk mobile
+            sliderContainer.addEventListener('touchstart', handleTouchStart, { passive: false });
+            sliderContainer.addEventListener('touchmove', handleTouchMove, { passive: false });
+            sliderContainer.addEventListener('touchend', handleTouchEnd);
+            
+            function handleTouchStart(e) {
+                startX = e.touches[0].clientX;
+                currentX = startX;
+                isDragging = true;
+                e.preventDefault();
+            }
+            
+            function handleTouchMove(e) {
+                if (!isDragging) return;
+                currentX = e.touches[0].clientX;
+                e.preventDefault();
+            }
+            
+            function handleTouchEnd(e) {
+                if (!isDragging) return;
+                
+                const diffX = startX - currentX;
+                const minSwipeDistance = 50; // Minimal jarak swipe
+                
+                if (Math.abs(diffX) > minSwipeDistance) {
+                    if (diffX > 0) {
+                        // Swipe kiri -> next slide
+                        changeSlide(1);
+                    } else {
+                        // Swipe kanan -> previous slide
+                        changeSlide(-1);
+                    }
+                }
+                
+                isDragging = false;
+                e.preventDefault();
+            }
         });
     </script>
 </body>
 </html>
+
 
 
 
