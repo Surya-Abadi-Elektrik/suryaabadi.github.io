@@ -114,7 +114,8 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-            height: 500px; /* Tinggi lebih besar untuk aspect ratio 3:4 */
+            aspect-ratio: 3/4; /* Aspect ratio 3:4 */
+            max-height: 600px; /* Batas maksimal tinggi */
         }
         
         .slider {
@@ -132,7 +133,7 @@
         .slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* atau 'contain' jika mau lihat full gambar */
+            object-fit: cover; /* atau 'contain' sesuai preferensi */
             display: block;
         }
         
