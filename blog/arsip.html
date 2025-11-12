@@ -2,18 +2,66 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Kumpulan semua artikel, tips, dan panduan dari Surya Abadi Elektrik mengenai pengeboran sumur, filter air, pompa, dan instalasi penangkal petir.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semua Artikel Blog | Surya Abadi Elektrik</title>
-    <link rel="canonical" href="https://suryaabadielektrik.web.id/blog/index.html">
-    <link rel="icon" type="image/png" href="../images/logo-icon1.png">
+    <title>Arsip Semua Artikel Blog | Surya Abadi Elektrik</title>
+    
+    <link rel="canonical" href="https://suryaabadielektrik.web.id/blog/arsip.html">
+    <link rel="icon" type="image/png" href="../images/Favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* SALIN SEMUA CSS UTAMA DARI index.html DI SINI */
+        /* CSS DASAR (Diambil dari index Anda) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         
-        body { background-color: #f5f9fc; color: #333; line-height: 1.6; padding-top: 120px; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        body {
+            background-color: #f5f9fc;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 120px; /* Jarak untuk header fixed */
+        }
         
-        /* Gaya Khusus Blog Index */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER (Diambil dari index Anda) */
+        header {
+            background: linear-gradient(135deg, #0a4a8e 0%, #1a75bc 100%);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 15px; }
+        .logo-image { width: 50px; height: 50px; object-fit: contain; }
+        .logo-text h1 { font-size: 1.6rem; line-height: 1.2; }
+        .logo-text p { font-size: 0.8rem; opacity: 0.9; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { color: white; text-decoration: none; font-weight: 500; transition: color 0.3s; font-size: 1rem; padding: 5px 10px; border-radius: 4px; }
+        nav a:hover { color: #ffcc00; background: rgba(255, 255, 255, 0.1); }
+        
+        /* FOOTER (Diambil dari index Anda) */
+        footer { background: #0a4a8e; color: white; padding: 35px 0 15px; text-align: center; }
+        .footer-content { display: flex; flex-direction: column; gap: 25px; margin-bottom: 25px; }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 10px 0;}
+        .footer-links a { color: white; text-decoration: none; transition: color 0.3s; font-size: 0.9rem; }
+        .footer-links a:hover { color: #ffcc00; }
+        .copyright { padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.85rem; }
+
+        /* GAYA KHUSUS ARSIP BLOG */
         .blog-index { padding: 40px 0; }
         .blog-index h1 { 
             text-align: center; 
@@ -24,31 +72,47 @@
             padding-bottom: 15px;
         }
 
+        /* Gaya untuk Kategori */
+        .category-heading {
+            font-size: 1.8rem;
+            color: #0a4a8e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding: 10px 0;
+            border-bottom: 3px solid #1a75bc;
+        }
+
+        .category-heading i {
+            margin-right: 10px;
+        }
+
         .post-card {
             background: white;
             border: 1px solid #e0e0e0;
             border-radius: 8px;
             margin-bottom: 25px;
             padding: 25px;
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s, transform 0.3s;
         }
 
         .post-card:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
         }
 
-        .post-card h2 {
+        .post-card h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
         }
 
-        .post-card h2 a {
+        .post-card h3 a {
             color: #1a75bc;
             text-decoration: none;
         }
 
-        .post-card h2 a:hover {
+        .post-card h3 a:hover {
             text-decoration: underline;
+            color: #0a4a8e;
         }
         
         .post-meta {
@@ -75,29 +139,99 @@
     </style>
 </head>
 <body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="../images/Favicon.png" alt="Logo Surya Abadi Elektrik" class="logo-image">
+                <div class="logo-text">
+                    <h1>SURYA ABADI ELEKTRIK</h1>
+                    <p>Pengeboran Sumur, Penangkal Petir & Grounding</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#home">Beranda</a></li>
+                    <li><a href="../index.html#services">Layanan</a></li>
+                    <li><a href="../index.html#contact">Kontak</a></li>
+                    <li><a href="arsip.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <section class="blog-index">
         <div class="container">
-            <h1>Arsip Artikel Pengeboran Sumur & Solusi Air</h1>
+            <h1>Arsip Semua Artikel & Panduan Teknik</h1>
             
+            <h2 class="category-heading"><i class="fas fa-filter"></i> Solusi Air Bersih & Filterisasi</h2>
+
+            #copy dari sini
             <div class="post-card">
-                <h2>
+                <h3>
                     <a href="filter_air_keruh.html">Air Sumur Tiba-Tiba Keruh & Berbau? Ini 3 Solusi Paling Efektif!</a>
-                </h2>
-                <p class="post-meta">12 November 2025 | Kategori: Solusi Air Bersih</p>
+                </h3>
+                <p class="post-meta">12 November 2025 | Solusi Air Bersih</p>
                 <p class="post-excerpt">Mendapati air sumur yang biasanya jernih tiba-tiba berubah menjadi keruh, cokelat, atau bahkan mengeluarkan bau tak sedap adalah mimpi buruk. Kami rangkum tiga penyebab utama dan solusi paling ampuh...</p>
                 <a href="filter_air_keruh.html" class="read-more">Baca Selengkapnya &raquo;</a>
             </div>
+            #sampai ini
+
+            
+            <h2 class="category-heading"><i class="fas fa-pump-medical"></i> Pengeboran Sumur & Pompa Air</h2>
+            
+            #copy dari sini
+            <div class="post-card">
+                <h3>
+                    <a href="sumur/pompa/otomatis_air.html">Kenapa Pompa Air Sering "Ceklek-Ceklek"? Solusi Kerusakan Otomatis Pompa</a>
+                </h3>
+                <p class="post-meta">Segera Hadir | Pompa Air & Otomatisasi</p>
+                <p class="post-excerpt">Pompa yang sering hidup mati adalah tanda masalah. Kami berikan panduan perawatan harian dan tips servis agar pompa Anda efisien dan awet, termasuk cara setting otomatis yang benar.</p>
+                <a href="sumur/pompa/otomatis_air.html" class="read-more">Baca Selengkapnya &raquo;</a>
+            </div>
+            #sampai ini
 
             <div class="post-card">
-                <h2>
-                    <a href="artikel_baru.html">Berapa Kedalaman Sumur yang Ideal untuk Air Bersih di Semarang?</a>
-                </h2>
-                <p class="post-meta">Segera Hadir | Kategori: Pengeboran Sumur</p>
-                <p class="post-excerpt">Bingung memilih antara sumur dangkal atau sumur dalam? Artikel ini akan membahas faktor geologis Semarang dan menentukan kedalaman optimal untuk mendapatkan air bersih yang berkelanjutan dan aman.</p>
-                </div>
-            
+                <h3>
+                    <a href="sumur/judul_artikel_sumur.html">Judul Artikel Sumur Anda di Sini</a>
+                </h3>
+                <p class="post-meta">Tanggal Posting | Kategori Pengeboran Sumur</p>
+                <p class="post-excerpt">Ringkasan singkat yang menarik tentang artikel Anda, maksimal 2-3 baris.</p>
+                <a href="sumur/judul_artikel_sumur.html" class="read-more">Baca Selengkapnya &raquo;</a>
             </div>
+            <h2 class="category-heading"><i class="fas fa-bolt"></i> Penangkal Petir & Grounding</h2>
+
+            #copy dari sini
+            <div class="post-card">
+                <h3>
+                    <a href="penangkal_petir/pentingnya_grounding.html">Jangan Anggap Remeh! Pentingnya Nilai Grounding Rendah untuk Penangkal Petir</a>
+                </h3>
+                <p class="post-meta">Segera Hadir | Penangkal Petir</p>
+                <p class="post-excerpt">Banyak yang salah paham. Grounding yang buruk membuat instalasi penangkal petir Anda sia-sia. Pelajari standar yang harus Anda capai.</p>
+                <a href="penangkal_petir/pentingnya_grounding.html" class="read-more">Baca Selengkapnya &raquo;</a>
+            </div>
+            #sampai ini
+
+            
+        </div>
     </section>
 
-    </body>
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Surya Abadi Elektrik</div>
+            <div class="footer-links">
+                <a href="../index.html#home">Beranda</a>
+                <a href="../index.html#services">Layanan</a>
+                <a href="../index.html#about">Tentang Kami</a>
+                <a href="../index.html#gallery">Galeri</a>
+                <a href="../index.html#contact">Kontak</a>
+                <a href="arsip.html">Blog</a>
+                <a href="../privacy_policy.html">Kebijakan Privasi</a>
+                <a href="../terms_conditions.html">Syarat & Ketentuan</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Surya Abadi Elektrik. Semua Hak Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
