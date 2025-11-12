@@ -127,32 +127,45 @@
             margin-bottom: 15px;
         }
 
-        /* GAYA UNTUK NAVIGASI FILTER BARU */
-        .filter-navigation {
-            text-align: center; /* Memposisikan di tengah */
-            margin-bottom: 30px;
-            margin-top: -20px; /* Ditarik sedikit ke atas */
+        /* GAYA UNTUK DAFTAR ISI (TABLE OF CONTENTS) BARU */
+        .table-of-contents {
+            max-width: 600px; /* Batasi lebar agar tidak terlalu lebar */
+            margin: 10px auto 40px auto; /* Tengah, beri jarak bawah */
+            padding: 15px 25px;
+            background-color: #eaf3f8; /* Warna latar belakang lembut */
+            border: 1px solid #d4e0e8;
+            border-radius: 8px;
         }
         
-        .filter-btn {
-            display: inline-block;
-            background-color: #1a75bc; /* Warna Biru Utama */
-            color: white;
-            padding: 10px 18px;
-            border-radius: 25px;
+        .table-of-contents h4 {
+            font-size: 1.1rem;
+            color: #0a4a8e;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .table-of-contents ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .table-of-contents ul li {
+            margin-bottom: 5px;
+        }
+        
+        .table-of-contents a {
+            color: #1a75bc;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin: 5px 8px;
-            transition: background-color 0.3s, transform 0.2s;
+            font-size: 1rem;
+            transition: color 0.2s;
         }
         
-        .filter-btn:hover {
-            background-color: #0a4a8e; /* Warna Biru Lebih Gelap saat hover */
-            transform: translateY(-1px);
+        .table-of-contents a:hover {
+            color: #0a4a8e;
+            text-decoration: underline;
         }
         
-        .filter-btn i {
+        .table-of-contents a i {
             margin-right: 8px;
         }
 
@@ -193,10 +206,13 @@
         <div class="container">
             <h1>Arsip Semua Artikel & Panduan Teknik</h1>
 
-            <div class="filter-navigation">
-                <a href="#kategori-sumur" class="filter-btn"><i class="fas fa-water"></i> Sumur & Pompa</a>
-                <a href="#kategori-filter" class="filter-btn"><i class="fas fa-filter"></i> Solusi Air Bersih</a>
-                <a href="#kategori-petir" class="filter-btn"><i class="fas fa-bolt"></i> Penangkal Petir</a>
+            <div class="table-of-contents">
+                <h4>Daftar Isi:</h4>
+                <ul>
+                    <li><a href="#kategori-filter"><i class="fas fa-filter"></i> Solusi Air Bersih</a></li>
+                    <li><a href="#kategori-sumur"><i class="fas fa-water"></i> Sumur & Pompa</a></li>
+                    <li><a href="#kategori-petir"><i class="fas fa-bolt"></i> Penangkal Petir & Grounding</a></li>
+                </ul>
             </div>
             
             <h2 id="kategori-filter" class="category-heading"><i class="fas fa-filter"></i> Solusi Air Bersih & Filterisasi</h2>
