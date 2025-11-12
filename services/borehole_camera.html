@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nama Layanan - Surya Abadi Elektrik</title>
     <link rel="icon" type="image/png" href="../images/logo-icon1.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://suryaabadielektrik.web.id/services/borehole_camera.html">
     <style>
         * {
             margin: 0;
@@ -208,6 +208,25 @@
         .service-detail {
             padding: 80px 0;
             background: white;
+        }
+
+        .service-detail h1 {
+            /* Memusatkan teks dan ikon di dalam h1 */
+            text-align: center; 
+            
+            /* Styling tambahan agar tampilannya tetap bagus */
+            font-size: 2.2em;
+            color: #0a4a8e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        
+        .service-detail h1 i {
+            /* Styling ikon */
+            font-size: 1.2em;
+            margin-right: 15px;
+            color: #1a75bc;
         }
         
         .detail-grid {
@@ -584,7 +603,7 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="../index.html">Beranda</a></li>
+                    <li><a href="https://suryaabadielektrik.web.id/">Beranda</a></li>
                     <li><a href="../index.html#services">Layanan</a></li>
                     <li><a href="../index.html#about">Tentang Kami</a></li>
                     <li><a href="../index.html#gallery">Galeri</a></li>
@@ -644,10 +663,30 @@
                     
                     <div class="action-buttons">
                         <a href="https://wa.me/6285100044750?text=Halo,%20saya%20ingin%20konsultasi%20tentang%20[LAYANAN]" class="btn" id="whatsapp-btn">
-                            <i class="fab fa-whatsapp"></i> Konsultasi via WhatsApp
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
+                              <defs>
+                                <!-- Mask: hitam = transparan, putih = terlihat.
+                                     Kita buat awal hitam, lalu gambar bubble putih, lalu gambar handset hitam
+                                     sehingga handset 'memotong' bubble -->
+                                <mask id="cutPhone" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+                                  <rect x="0" y="0" width="512" height="512" fill="black"/>
+                                  <!-- area bubble yang terlihat -->
+                                  <path fill="white" d="M256 118c-74.4 0-135 60.6-135 135 0 26.6 7.8 52 22.5 74l-15 54.5 55.9-14.7c21 11.4 44.6 17.3 68.6 17.3 74.4 0 135-60.6 135-135S330.4 118 256 118z"/>
+                                  <!-- handset (hitam) => akan menjadi lubang pada bubble -->
+                                  <path fill="black" d="M333.1 285.5c-3.9-2-22.9-11.3-26.5-12.6-3.6-1.4-6.2-2.1-8.8 2-2.6 4.1-10.1 12.9-12.4 15.6-2.3 2.6-4.6 3-8.5 1-3.9-2-16.4-6-31.2-19.2-11.5-10.3-19.4-23.1-21.7-26.9-2.3-3.9-.2-6 1.8-7.9 1.8-1.8 4.1-4.6 6.2-6.8 2-2.3 2.6-3.9 3.9-6.5 1.3-2.6.6-4.9-.3-6.8-.9-1.8-8.8-21-12.1-28.8-3.2-7.7-6.5-6.7-8.8-6.8-2.3-.2-4.9-.2-7.4-.2s-6.8 1-10.4 4.9c-3.6 3.9-13.7 13.3-13.7 32.4 0 19.1 14 37.6 16 40.1 1.8 2.6 27.5 42 66.7 59 9.4 4 16.7 6.4 22.4 8.2 9.4 3 18 2.6 24.7 1.6 7.6-1.2 22.8-9.3 26-18.3 3.2-9 3.2-16.7 2.2-18.3-1-1.6-3.5-2.6-7.4-4.6z"/>
+                                </mask>
+                              </defs>
+                            
+                              <!-- Gunakan mask pada rect putih sehingga hanya area bubble minus handset terlihat -->
+                              <rect x="0" y="0" width="512" height="512" fill="none"/>
+                              <rect x="0" y="0" width="512" height="512" fill="#ffffff" mask="url(#cutPhone)"/>
+                            </svg></i> WhatsApp
                         </a>
                         <a href="tel:085100044750" class="btn btn-secondary">
-                            <i class="fas fa-phone"></i> Telepon Sekarang
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
+                              <path fill="none" stroke="#fff" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"
+                                d="M164 56c-16 16-24 48-8 80s40 72 88 120 88 72 120 88 64 8 80-8l16-16c8-8 8-20 0-28l-48-48c-8-8-20-8-28 0l-24 24c-24-12-52-32-76-56s-44-52-56-76l24-24c8-8 8-20 0-28l-48-48c-8-8-20-8-28 0l-16 16z"/>
+                            </svg></i> 0851-0004-4750
                         </a>
                     </div>
                 </div>
@@ -661,10 +700,30 @@
             <p>Hubungi kami sekarang untuk konsultasi gratis dan penawaran terbaik</p>
             <div class="cta-buttons">
                 <a href="https://wa.me/6285100044750?text=Halo,%20saya%20ingin%20konsultasi%20tentang%20jasa%20pengeboran%20sumur" class="btn">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
+                      <defs>
+                        <!-- Mask: hitam = transparan, putih = terlihat.
+                             Kita buat awal hitam, lalu gambar bubble putih, lalu gambar handset hitam
+                             sehingga handset 'memotong' bubble -->
+                        <mask id="cutPhone" maskUnits="userSpaceOnUse" x="0" y="0" width="512" height="512">
+                          <rect x="0" y="0" width="512" height="512" fill="black"/>
+                          <!-- area bubble yang terlihat -->
+                          <path fill="white" d="M256 118c-74.4 0-135 60.6-135 135 0 26.6 7.8 52 22.5 74l-15 54.5 55.9-14.7c21 11.4 44.6 17.3 68.6 17.3 74.4 0 135-60.6 135-135S330.4 118 256 118z"/>
+                          <!-- handset (hitam) => akan menjadi lubang pada bubble -->
+                          <path fill="black" d="M333.1 285.5c-3.9-2-22.9-11.3-26.5-12.6-3.6-1.4-6.2-2.1-8.8 2-2.6 4.1-10.1 12.9-12.4 15.6-2.3 2.6-4.6 3-8.5 1-3.9-2-16.4-6-31.2-19.2-11.5-10.3-19.4-23.1-21.7-26.9-2.3-3.9-.2-6 1.8-7.9 1.8-1.8 4.1-4.6 6.2-6.8 2-2.3 2.6-3.9 3.9-6.5 1.3-2.6.6-4.9-.3-6.8-.9-1.8-8.8-21-12.1-28.8-3.2-7.7-6.5-6.7-8.8-6.8-2.3-.2-4.9-.2-7.4-.2s-6.8 1-10.4 4.9c-3.6 3.9-13.7 13.3-13.7 32.4 0 19.1 14 37.6 16 40.1 1.8 2.6 27.5 42 66.7 59 9.4 4 16.7 6.4 22.4 8.2 9.4 3 18 2.6 24.7 1.6 7.6-1.2 22.8-9.3 26-18.3 3.2-9 3.2-16.7 2.2-18.3-1-1.6-3.5-2.6-7.4-4.6z"/>
+                        </mask>
+                      </defs>
+                    
+                      <!-- Gunakan mask pada rect putih sehingga hanya area bubble minus handset terlihat -->
+                      <rect x="0" y="0" width="512" height="512" fill="none"/>
+                      <rect x="0" y="0" width="512" height="512" fill="#ffffff" mask="url(#cutPhone)"/>
+                    </svg></i> WhatsApp
                 </a>
                 <a href="tel:085100044750" class="btn btn-secondary">
-                    <i class="fas fa-phone"></i> 0851-0004-4750
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25" height="25">
+                      <path fill="none" stroke="#fff" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"
+                        d="M164 56c-16 16-24 48-8 80s40 72 88 120 88 72 120 88 64 8 80-8l16-16c8-8 8-20 0-28l-48-48c-8-8-20-8-28 0l-24 24c-24-12-52-32-76-56s-44-52-56-76l24-24c8-8 8-20 0-28l-48-48c-8-8-20-8-28 0l-16 16z"/>
+                    </svg></i> 0851-0004-4750
                 </a>
                 <a href="../index.html#contact" class="btn btn-secondary">
                     <i class="fas fa-map-marker-alt"></i> Lihat Lokasi
@@ -678,7 +737,7 @@
             <div class="footer-content">
                 <div class="footer-logo">Surya Abadi Elektrik</div>
                 <div class="footer-links">
-                    <a href="../index.html">Beranda</a>
+                    <a href="https://suryaabadielektrik.web.id/">Beranda</a>
                     <a href="../index.html#services">Layanan</a>
                     <a href="../index.html#about">Tentang Kami</a>
                     <a href="../index.html#gallery">Galeri</a>
