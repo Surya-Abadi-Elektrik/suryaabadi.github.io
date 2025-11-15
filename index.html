@@ -794,6 +794,8 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 12px;
+                justify-content: flex-start; /* Mulai dari kiri */
+                padding: 0 20px;
             }
 
             /* Tampilkan Hamburger di Mobile */
@@ -805,10 +807,10 @@
             #main-nav ul {
                 display: none; /* Sembunyikan menu default */
                 flex-direction: column;
-                width: 100%;
                 position: absolute;
-                top: 80px; /* Jarak dari atas (sesuaikan dengan tinggi header Anda) */
+                top: 80px; 
                 left: 0;
+                width: 100%;
                 background-color: #0a4a8e; /* Warna latar belakang menu */
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 padding: 10px 0;
@@ -838,13 +840,12 @@
             }
             
             .logo {
-                justify-content: center;
-            }
-            
-            .logo {
                 display: flex;
-                align-items: center;
                 gap: 15px;
+                display: flex; 
+                justify-content: space-between; /* PUSH Hamburger ke tepi kanan logo */
+                align-items: center;
+                width: 100%;
             }
             
             .logo-image {
@@ -1055,7 +1056,7 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="images/Favicon.png" alt="Logo Surya Abadi Elektrik" style="width: 50px; height: 50px; object-fit: contain;">
+                <img src="images/logo-icon2.png" alt="Logo Surya Abadi Elektrik" style="width: 50px; height: 50px; object-fit: contain;">
                 <div class="logo-text">
                     <h1>SURYA ABADI ELEKTRIK</h1>
                     <p>Pengeboran Sumur, Penangkal Petir & Grounding</p>
@@ -1670,6 +1671,7 @@
     </script>
 </body>
 </html>
+
 
 
 
