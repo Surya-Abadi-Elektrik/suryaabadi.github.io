@@ -751,6 +751,38 @@
         .view-all-btn:hover {
             background-color: #e6b800;
         }
+
+        /* Tombol Hamburger */
+        .hamburger {
+            display: none; /* Sembunyikan tombol di desktop */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001; /* Pastikan di atas semua elemen */
+            margin-right: -10px; /* Mengurangi padding agar lebih dekat ke tepi */
+        }
+        
+        .hamburger .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: white;
+            transition: all 0.3s ease-in-out;
+            border-radius: 2px;
+        }
+        
+        /* Transisi X (Active State) */
+        .hamburger.active .bar:nth-child(2) {
+            opacity: 0; /* Sembunyikan bar tengah */
+        }
+        .hamburger.active .bar:nth-child(1) {
+            transform: translateY(8px) rotate(45deg); /* Putar bar atas */
+        }
+        .hamburger.active .bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg); /* Putar bar bawah */
+        }
         
         /* Responsive Styles */
         @media (max-width: 768px) {
@@ -762,6 +794,47 @@
                 flex-direction: column;
                 text-align: center;
                 gap: 12px;
+            }
+
+            /* Tampilkan Hamburger di Mobile */
+            .hamburger {
+                display: block;
+            }
+            
+            /* Navigasi Vertikal */
+            #main-nav ul {
+                display: none; /* Sembunyikan menu default */
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 80px; /* Jarak dari atas (sesuaikan dengan tinggi header Anda) */
+                left: 0;
+                background-color: #0a4a8e; /* Warna latar belakang menu */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                padding: 10px 0;
+                z-index: 999;
+            }
+            
+            /* Style untuk setiap item menu */
+            #main-nav ul li {
+                width: 100%;
+                text-align: center;
+            }
+            
+            #main-nav ul li a {
+                padding: 15px 20px;
+                display: block;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis pemisah */
+            }
+        
+            /* Tampilkan menu saat class 'active' ada */
+            #main-nav.active ul {
+                display: flex;
+            }
+        
+            /* Pastikan header-content menggunakan space-between */
+            .header-content {
+                justify-content: space-between;
             }
             
             .logo {
@@ -982,21 +1055,27 @@
     <header>
         <div class="container header-content">
             <div class="logo">
-                <img src="images/logo-icon2.png" alt="Surya Abadi Elektrik" class="logo-image">
+                <img src="images/Favicon.png" alt="Logo Surya Abadi Elektrik" style="width: 50px; height: 50px; object-fit: contain;">
                 <div class="logo-text">
-                    <h1>Surya Abadi Elektrik</h1>
-                    <p>Jasa Pengeboran Sumur dan Penangkal Petir</p>
+                    <h1>SURYA ABADI ELEKTRIK</h1>
+                    <p>Pengeboran Sumur, Penangkal Petir & Grounding</p>
                 </div>
             </div>
-            <nav>
+            
+            <nav id="main-nav">
                 <ul>
                     <li><a href="#home">Beranda</a></li>
                     <li><a href="#services">Layanan</a></li>
                     <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#gallery">Galeri</a></li>
-                    <li><a href="#contact">Kontak</a></li>
+                    <li><a href="blog/arsip.html">Blog</a></li> <li><a href="#contact">Kontak</a></li>
                 </ul>
             </nav>
+    
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
@@ -1546,9 +1625,52 @@
                 }
             });
         });
+
+        // WhatsApp Popup Functionality (Kode lama Anda)
+        document.addEventListener('DOMContentLoaded', function() {
+            const whatsappButton = document.getElementById('whatsappButton');
+            const popupContent = document.getElementById('popupContent');
+            const closePopup = document.getElementById('closePopup');
+            
+            whatsappButton.addEventListener('click', function() {
+                popupContent.classList.toggle('show');
+            });
+            
+            closePopup.addEventListener('click', function() {
+                popupContent.classList.remove('show');
+            });
+            
+            // Close popup when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!whatsappButton.contains(event.target) && !popupContent.contains(event.target)) {
+                    popupContent.classList.remove('show');
+                }
+            });
+            
+            // --- FUNGSI BARU UNTUK HAMBURGER MENU ---
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mainNav = document.getElementById('main-nav');
+            const navLinks = document.querySelectorAll('#main-nav ul li a');
+
+            hamburgerBtn.addEventListener('click', function() {
+                // Toggle 'active' class pada tombol dan navigasi
+                hamburgerBtn.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            });
+            
+            // Tutup menu saat link diklik (penting untuk smooth scrolling)
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    hamburgerBtn.classList.remove('active');
+                    mainNav.classList.remove('active');
+                });
+            });
+
+        });
     </script>
 </body>
 </html>
+
 
 
 
