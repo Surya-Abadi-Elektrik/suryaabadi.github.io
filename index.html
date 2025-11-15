@@ -791,10 +791,9 @@
             }
             
             .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 12px;
-                justify-content: flex-start; /* Mulai dari kiri */
+                flex-direction: row; /* Kunci: Tetap dalam satu baris */
+                justify-content: space-between; 
+                align-items: center; 
                 padding: 0 20px;
             }
 
@@ -802,16 +801,20 @@
             .hamburger {
                 display: block;
             }
+
+            #main-nav {
+                display: none; 
+            }
             
             /* Navigasi Vertikal */
             #main-nav ul {
-                display: none; /* Sembunyikan menu default */
+                display: none; 
                 flex-direction: column;
+                width: 100%;
                 position: absolute;
                 top: 80px; 
                 left: 0;
-                width: 100%;
-                background-color: #0a4a8e; /* Warna latar belakang menu */
+                background-color: #0a4a8e;
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
                 padding: 10px 0;
                 z-index: 999;
@@ -827,6 +830,10 @@
                 padding: 15px 20px;
                 display: block;
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis pemisah */
+            }
+
+            #main-nav.active {
+                display: block; 
             }
         
             /* Tampilkan menu saat class 'active' ada */
@@ -951,9 +958,9 @@
             }
 
             .header-content {
-                flex-direction: column;
-                text-align: center;
-                gap: 12px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
             }
             
             .detail-grid {
@@ -962,10 +969,9 @@
             }
             
             .logo {
-                justify-content: center;
-            }
-            
-            .logo {
+                justify-content: space-between;
+                width: 100%;
+                gap: 15px;
                 display: flex;
                 align-items: center;
                 gap: 15px;
@@ -1671,6 +1677,7 @@
     </script>
 </body>
 </html>
+
 
 
 
