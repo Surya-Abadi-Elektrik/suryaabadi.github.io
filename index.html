@@ -5,7 +5,7 @@
     <meta name="description" content="Surya Abadi Elektrik melayani jasa pengeboran sumur dangkal & dalam, instalasi penangkal petir, grounding, dan service pompa di Semarang dan seluruh Jawa. Profesional sejak 2010.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="5U9v1ewka9BqSIONUOaldKWaNHzRKxm2tPr_1tjAtnA" />
-    <title>Surya Abadi Elektrik - Jasa Pengeboran Sumur dan Penangkal Petir</title>
+    <title>Surya Abadi Elektrik | Jasa Pengeboran Sumur, Service Sumur dan Pompa, serta Penangkal Petir dan Grounding</title>
     <link rel="icon" type="image/png" href="images/Favicon.png">
     <link rel="shortcut icon" href="https://suryaabadielektrik.web.id/images/Favicon.png" type="image/png">
     <link rel="icon" href="https://suryaabadielektrik.web.id/images/Favicon.png" type="image/png">
@@ -628,6 +628,111 @@
         
         .close-popup:hover {
             color: #333;
+        }
+
+        /* GAYA UNTUK BAGIAN ARTIKEL TERBARU DI HOMEPAGE */
+        #latest-blog {
+            padding: 60px 0;
+            background-color: #f0f6fa; /* Latar belakang sedikit berbeda */
+            text-align: center;
+        }
+        
+        #latest-blog h2 {
+            font-size: 2.5rem;
+            color: #0a4a8e;
+            margin-bottom: 10px;
+        }
+        
+        #latest-blog p.subtitle {
+            color: #555;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .blog-card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #ccc; /* Placeholder warna abu */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #666;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.9rem;
+            object-fit: cover;
+        }
+        
+        .blog-card-content {
+            padding: 20px;
+        }
+        
+        .blog-card-content h3 {
+            font-size: 1.2rem;
+            color: #1a75bc;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .blog-card-content p {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 15px;
+            /* Batasi ringkasan */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 60px; /* Jaga tinggi yang sama */
+        }
+        
+        .blog-card-content .read-more {
+            color: #ffcc00;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .blog-card-content .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        .view-all-btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #0a4a8e;
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 40px;
+            transition: background-color 0.3s;
+        }
+        
+        .view-all-btn:hover {
+            background-color: #e6b800;
         }
         
         /* Responsive Styles */
@@ -1299,6 +1404,55 @@
         </div>
     </section>
 
+    <section id="latest-blog">
+        <div class="container">
+            <h2>Artikel & Panduan Teknik Terbaru</h2>
+            <p class="subtitle">Dapatkan tips dan solusi terbaru mengenai pengeboran sumur, filter air, hingga instalasi penangkal petir langsung dari teknisi kami.</p>
+
+            <div class="blog-grid">
+                
+                <a href="blog/penangkal_petir/pentingnya_grounding.html" class="blog-card">
+                    <img src="images/blog_grounding.jpg" alt="Thumbnail Grounding Penangkal Petir" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3>Pentingnya Nilai Grounding Rendah untuk Penangkal Petir</h3>
+                        <p>Kilat adalah arus listrik raksasa. Jika resistensi (hambatan) grounding terlalu tinggi, petir akan mencari jalur lain, yang mungkin adalah instalasi listrik rumah Anda.</p>
+                        <span class="read-more">Baca Selengkapnya &raquo;</span>
+                    </div>
+                </a>
+
+                <a href="blog/sumur/pompa/otomatis_air.html" class="blog-card">
+                    <img src="images/blog_WLC.jpg" alt="Thumbnail Otomatis Pompa" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3>Kenapa Pompa Air Sering "Ceklek-Ceklek"? Solusi Kerusakan Otomatis Pompa</h3>
+                        <p>Kondisi *cycling* ini bukan hanya boros listrik, tapi juga menjadi indikasi adanya masalah serius pada *pressure switch* atau instalasi pipa.</p>
+                        <span class="read-more">Baca Selengkapnya &raquo;</span>
+                    </div>
+                </a>
+                
+                <a href="blog/filter_air_keruh.html" class="blog-card">
+                    <img src="images/blog_filter.jpg" alt="Thumbnail Filter Air" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <h3>Air Sumur Keruh & Berbau? Ini Solusi Paling Efektif!</h3>
+                        <p>Air sumur tiba-tiba keruh, kuning, atau berbau? Kenali 3 penyebab utamanya dan temukan solusi filterisasi air paling efektif dari Surya Abadi Elektrik.</p>
+                        <span class="read-more">Baca Selengkapnya &raquo;</span>
+                    </div>
+                </a>
+
+                <a href="blog/arsip.html" class="blog-card">
+                    <div class="blog-card-image">Tips & Trik</div>
+                    <div class="blog-card-content">
+                        <h3>(Segera Hadir) Tips Memilih Kedalaman Sumur Bor yang Ideal</h3>
+                        <p>Memilih kedalaman yang tepat sangat krusial untuk kualitas air jangka panjang. Kami akan memandu Anda berdasarkan zona geologi di wilayah Semarang.</p>
+                        <span class="read-more">Lihat Arsip Blog &raquo;</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <a href="blog/arsip.html" class="view-all-btn">Lihat Semua Artikel & Panduan</a>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1366,6 +1520,7 @@
     </script>
 </body>
 </html>
+
 
 
 
