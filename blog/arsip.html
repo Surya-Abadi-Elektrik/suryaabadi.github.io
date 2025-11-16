@@ -183,88 +183,28 @@
             color: #0a4a8e;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             body {
                 padding-top: 110px;
             }
             
             .header-content {
-                flex-direction: row; /* Kunci: Tetap dalam satu baris */
-                justify-content: space-between; 
-                align-items: center; 
-                padding: 0 20px;
-            }
-
-            .logo {
-                display: flex;
-                gap: 15px;
-                align-items: center;
-                width: 100%;
-                justify-content: flex-start; 
-            }
-
-            .logo-image {
-                width: 50px;        /* Ukuran fixed */
-                height: 50px;       /* Ukuran fixed */
-                object-fit: contain; /* Biar tidak terdistorsi */
-            }
-
-            .logo-text {
-                text-align: center; 
-                margin-right: auto; 
-                margin-left: auto;
-                padding-right: 15px; 
-            }
-            
-            .logo-text h1 {
-                font-size: 1.4rem;
-            }
-
-            nav ul {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            
-            nav a {
-                font-size: 0.85rem;
-                padding: 4px 8px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding-top: 110px;
-            }
-            
-            nav ul {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            
-            nav a {
-                font-size: 0.8rem;
-                padding: 3px 3px;
-            }
-    
-            .header-content {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
             }
             
             .detail-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+
+            .logo {
+                justify-content: center;
+            }
             
             .logo {
-                justify-content: space-between;
-                width: 100%;
-                gap: 15px;
                 display: flex;
                 align-items: center;
                 gap: 15px;
@@ -275,18 +215,115 @@
                 height: 50px;       /* Ukuran fixed */
                 object-fit: contain; /* Biar tidak terdistorsi */
             }
-    
-            .logo-text {
-                text-align: center; 
-                margin-left: 15px; */ 
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
+            .service-hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 5px auto;
+            }
+            
+            .slide img {
+                aspect-ratio: 3 / 4; 
+                object-fit: cover; /* Tetap cover */
+                object-position: center; /* Pastikan fokus di tengah */
+                display: block;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding-top: 110px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 7px;
+            }
+            
+            nav a {
+                font-size: 0.7rem;
+                padding: 4px 5px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 12px;
+            }
+            
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+            
+            .logo {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .logo-image {
+                width: 50px;        /* Ukuran fixed */
+                height: 50px;       /* Ukuran fixed */
+                object-fit: contain; /* Biar tidak terdistorsi */
             }
             
             .logo-text h1 {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
-    
+
             .logo-text p {
-                font-size: 0.78rem;
+                font-size: 0.6rem;
+            }
+
+            .service-hero {
+                background: linear-gradient(135deg, #0a4a8e 0%, #1a75bc 100%);
+                color: white;
+                padding: 40px 0;
+                text-align: center;
+            }
+            
+            .service-hero-content h1 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 5px auto;
+            }
+            
+            .slide img {
+                aspect-ratio: 3 / 4; 
+                object-fit: cover; /* Tetap cover */
+                object-position: center; /* Pastikan fokus di tengah */
+                display: block;
             }
         }
     </style>
