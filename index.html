@@ -912,7 +912,8 @@
             }
             
             .services-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
             }
             
             .section-title h2 {
@@ -941,6 +942,18 @@
             
             .popup-content p {
                 font-size: 0.85rem;
+            }
+
+            .gallery-grid {
+                /* UBAH INI MENJADI 3 KOLOM */
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
+            }
+            
+            .blog-grid {
+                /* UBAH INI MENJADI 3 KOLOM */
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
             }
         }
         
@@ -1012,6 +1025,11 @@
             .maps-address p {
                 font-size: 0.9rem;
             }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
+            }
             
             .hero {
                 height: 400px;
@@ -1062,6 +1080,18 @@
                 width: 38px;
                 height: 38px;
                 font-size: 1rem;
+            }
+
+            .gallery-grid {
+                /* UBAH INI MENJADI 3 KOLOM */
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
+            }
+
+            .blog-grid {
+                /* UBAH INI MENJADI 3 KOLOM */
+                grid-template-columns: repeat(3, 1fr); 
+                gap: 10px;
             }
         }
     </style>
@@ -1686,21 +1716,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
